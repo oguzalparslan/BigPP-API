@@ -1,0 +1,31 @@
+Rules For BigPP Service Project
+
+1- Enitiy property'leri PascalCase yazýlacak (PascalCaseId).
+
+2- Field isimleri _ ile baþlayacak.
+
+3- Program.cs içine eklenecek her koda dokðmantasyon hazýrlanacak.
+
+4- Yazýlacak metotlar ingilizce yazýlacak ingilizcesi bilinmiyorsa google translate kullanýlabilir.
+   Kelime olarak kullanýlacaksa þayet tureng üzerinden ingilizce karþýlýðý alýnacak.
+
+5- Interface ve Class'lar Abstract ve Concrete klasörlerine yazýlacak 
+
+6- DataAccess te EntityFrameworCore klasörü altýnda sadece EFCore ile ilgili kodlar bulunacak. 
+   Repository altýnda sadece GenericRepository<TEntity> bulundacak.
+
+7- Entity generic yapýlarda "TEntity" olarak adlandýrýlacak.
+
+8- Entity güncelleme yapýlacaðý zaman tüm ekibe haber verilecek.
+
+9- DB'e her entity ile ilgili en az 5 veri eklenecek (Seeds => Dummy Data - Fake Data).
+
+10- Entity tanýmlanýrken id [key] olarak eklenmeli.
+
+11- Program.cs de yazýlan kodlar sade ve düzenli olacaktýr.
+
+12- private readonly (genelde business katmanýnda) kullanýlacak.
+
+13- Database CodeFirst ile oluþturulacak ve oluþturulan migration isimleri 
+	eklenen iliþki tablo gibi özellikleri içerecek. Ýlk migration init olmak 
+	zorundadýr.
