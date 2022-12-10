@@ -2,7 +2,7 @@ Rules For BigPP Service Project
 
 1- Enitiy property'leri PascalCase yazýlacak (PascalCaseId).
 
-2- Field isimleri _ ile baþlayacak.
+2- Field isimleri "_" ile baþlayacak.
 
 3- Program.cs içine eklenecek her koda dokðmantasyon hazýrlanacak.
 

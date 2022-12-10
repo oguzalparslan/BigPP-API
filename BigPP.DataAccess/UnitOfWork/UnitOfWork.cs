@@ -1,4 +1,5 @@
-﻿using BigPP.Entity.IUnitOfWork;
+﻿using BigPP.DataAccess.Concrete;
+using BigPP.Entity.IUnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,30 @@ namespace BigPP.DataAccess.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public void Commit()
+        // Access to AppDbContext
+        private readonly AppDbContext _appDbContext;
+
+        public UnitOfWork(AppDbContext appDbContext)
         {
-            throw new NotImplementedException();
+            _appDbContext = appDbContext;
         }
 
-        public Task CommitAsync()
+
+        /// <summary>
+        /// Asenkron olmayan işlemlerde kullanılacak commit metotu.
+        /// tek görevi kaydetmektir.
+        /// </summary>
+        public void Commit()
         {
-            throw new NotImplementedException();
+            _appDbContext.SaveChanges();
+        }
+        /// <summary>
+        /// Asenkron işlemlerde kullanılacak commit metotu 
+        /// tek görevi kaydetmektir.
+        /// </summary>
+        public async Task CommitAsync()
+        {
+            await _appDbContext.SaveChangesAsync();
         }
     }
 }

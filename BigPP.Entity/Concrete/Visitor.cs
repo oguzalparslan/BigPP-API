@@ -8,5 +8,8 @@ namespace BigPP.Entity.Concrete
 {
     public class Visitor : BaseEntity 
     {
+        public string VisitorName { get; set; }
+        public string VisitorPhone{ get; set; }
+        public User UserId{ get; set; }
     }
 }

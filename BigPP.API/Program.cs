@@ -1,3 +1,9 @@
+using BigPP.DataAccess.Concrete;
+using BigPP.DataAccess.UnitOfWork;
+using BigPP.Entity.IUnitOfWork;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +12,21 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+
+/*  
+ *  Db connection kodu
+ *  tip guvenli
+ *  */
+builder.Services.AddDbContext<AppDbContext>(x =>
+{
+    x.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection"), option =>
+    {
+        option.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
+    });
+});
+
 
 var app = builder.Build();
 

@@ -8,5 +8,7 @@ namespace BigPP.Entity.Concrete
 {
     public class Nurse : BaseEntity
     {
+        public string NurseName { get; set; }
+        public string NursePhone { get; set; }
     }
 }
