@@ -1,4 +1,6 @@
+using BigPP.DataAccess.Abstract;
 using BigPP.DataAccess.Concrete;
+using BigPP.DataAccess.Repository;
 using BigPP.DataAccess.UnitOfWork;
 using BigPP.Entity.IUnitOfWork;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 /*  
  *  Db connection kodu
