@@ -8,5 +8,7 @@ namespace BigPP.Entity.Concrete
 {
     public class NotConnectionUser : BaseEntity
     {
+        public int UserId { get; set; }
+        public User User { get; set; }
     }
 }

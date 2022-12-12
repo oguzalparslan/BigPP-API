@@ -11,7 +11,8 @@ namespace BigPP.Entity.Concrete
         public string FamilyName { get; set; }
         public string FamilyNumber { get; set; }
         public int FamilySize { get; set; }
-        public User UserId { get; set; }
+        public User User{ get; set; }
+        public int UserId { get; set; }
         public ICollection<FamilyMember> FamilyMemberList { get; set; }
 
     }

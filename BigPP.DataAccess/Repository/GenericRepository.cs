@@ -8,11 +8,13 @@ namespace BigPP.DataAccess.Repository
     {
         private readonly AppDbContext _appDbContext;
         private readonly DbSet<TEntity> _dbSet;
+
         public GenericRepository(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
             _dbSet = _appDbContext.Set<TEntity>();
         }
+
         public async Task AddAsync(TEntity entity)
         {
             await _dbSet.AddAsync(entity);
@@ -28,7 +30,7 @@ namespace BigPP.DataAccess.Repository
         public async Task<TEntity> GetByIdAsync(int id)
         {
             var entity = await _dbSet.FindAsync(id);
-            if (entity!=null)
+            if (entity != null)
             {
                 return entity;
             }

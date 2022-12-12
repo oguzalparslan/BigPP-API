@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BigPP.DataAccess.SeedData
 {
-    public class AdminSeed : IEntityTypeConfiguration<Admin>
+    public class AdminSeeds : IEntityTypeConfiguration<Admin>
     {
         public void Configure(EntityTypeBuilder<Admin> builder)
         {

@@ -18,7 +18,7 @@ Rules For BigPP Service Project
 
 8- Entity güncelleme yapýlacaðý zaman tüm ekibe haber verilecek.
 
-9- DB'e her entity ile ilgili en az 5 veri eklenecek (Seeds => Dummy Data - Fake Data).
+9- DB'e her entity ile ilgili en az 3 veri eklenecek (Seeds => Dummy Data - Fake Data).
 
 10- Entity tanýmlanýrken id [key] olarak eklenmeli.
 

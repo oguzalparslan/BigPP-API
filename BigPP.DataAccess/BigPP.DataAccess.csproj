@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <Folder Include="EntityFrameworkCore\" />
-    <Folder Include="Seeds\" />
     <Folder Include="Repository\" />
     <Folder Include="UnitOfWork\" />
   </ItemGroup>
