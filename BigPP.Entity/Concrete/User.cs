@@ -8,7 +8,8 @@ namespace BigPP.Entity.Concrete
 {
     public class User : BaseEntity
     {
-        public string  UserName{ get; set; }
-        public Family FamilyId{ get; set; }
+        public string UserName { get; set; }
+        public int FamilyId { get; set; }
+        public Family Family { get; set; }
     }
 }
