@@ -22,9 +22,11 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
  *  Db connection kodu
  *  tip guvenli
  *  */
+
+
 builder.Services.AddDbContext<AppDbContext>(x =>
 {
-    x.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection"), option =>
+    x.UseSqlServer(builder.Configuration.GetConnectionString("connection"), option =>
     {
         //option.MigrationsAssembly("NLayer.Repository"); Tip Guvensiz
         option.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
